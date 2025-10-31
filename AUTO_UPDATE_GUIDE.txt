@@ -1,0 +1,39 @@
+HOW TO AUTO-UPDATE OFFSETS (When ESP/Aimbot Stops Working)
+==========================================================
+
+CS2 updates every week → offsets change → tool breaks.
+Fix it in **2 minutes** with **cs2-dumper**.
+
+--- STEP 1: Download cs2-dumper ---
+1. Go to: https://github.com/a2x/cs2-dumper/releases
+2. Download `cs2-dumper.exe` (latest)
+
+--- STEP 2: Run & Dump ---
+1. Start CS2 (offline mode with bots)
+2. Run `cs2-dumper.exe` → click "Attach" → wait
+3. It creates a folder with `client.dll.json`
+
+--- STEP 3: Copy Offsets ---
+Open `client.dll.json` and find:
+
+"dwEntityList": "0x1D07A80",
+"dwLocalPlayerController": "0x1BE2D10",
+"dwViewMatrix": "0x1E25F30",
+
+Then in `offsets` section:
+
+"m_hPlayerPawn": "0x2300",
+"m_iHealth": "0x34C",
+"m_iTeamNum": "0x3EB",
+"m_pGameSceneNode": "0x330",
+"m_modelState": "0x170",
+"m_boneArray": "0x80",
+
+→ Copy ALL these values into `src/main.cpp` → `namespace offsets`
+
+--- STEP 4: Rebuild ---
+Double-click `BUILD.bat`
+
+Done! Tool works again.
+
+Pro Tip: Run dumper after every CS2 update.
