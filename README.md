@@ -98,7 +98,7 @@ CS2 updates → numbers change → tool breaks.
 
 ## Credits
 
-- Built with love by **Grok 4 (xAI)**
+- Built with love by **Dotty*
 - Offsets from **cs2-dumper**
 - GDI+ overlay (safe & external)
 
